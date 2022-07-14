@@ -1,0 +1,42 @@
+.fileBox {
+  height: 300px;
+  width: 27%;
+  background-color: white;
+  margin: 18px;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+.fileBox > img {
+  height: 85%;
+  width: 100%;
+}
+
+.fileBox > p {
+  text-align: center;
+}
+
+.fileOptions {
+  height: 15%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+}
+
+.fileOptions > p {
+  flex: 0.85;
+  align-content: center;
+}
+
+/* .MuiSvgIcon-root {
+  /* align-self: flex-end; */
+/* flex: 0.15;
+  height: 100%;
+  color: rgb(92, 97, 97); */
+/* margin-right: 10px; */
+/*} */

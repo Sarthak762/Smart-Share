@@ -1,0 +1,60 @@
+.upload {
+  height: 100vh;
+  width: 100vw;
+  /* background-color: antiquewhite; */
+  display: grid;
+  justify-items: center;
+}
+
+.uploadBox {
+  height: 80vh;
+  width: 60vw;
+  background-color: white;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.selectedImageBlank {
+  display: none;
+  height: 30px;
+  width: 30px;
+}
+
+.selectedImageShow {
+  display: block;
+  margin-top: 10vh;
+  height: 50%;
+  width: 50%;
+}
+
+.uploadBox > form {
+  margin-top: 35px;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.file {
+  height: 40px;
+  width: 75%;
+}
+
+.fileName {
+  height: 35px;
+  width: 75%;
+}
+
+.uploadButton {
+  height: 35px;
+  width: 25%;
+  background-color: rgb(51, 88, 114);
+  color: white;
+  border-radius: 5px;
+}

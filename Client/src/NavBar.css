@@ -1,0 +1,15 @@
+.navBar {
+  height: 7vh;
+  background-color: rgb(89, 90, 89);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  padding-left: 20px;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.navBar > h3 {
+  color: white;
+}

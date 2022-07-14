@@ -1,0 +1,55 @@
+.main_container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(234, 241, 241);
+}
+.hash_headline{
+    color: orange;
+}
+.box{
+    margin-top: 50px;
+    background-color: white;
+    height: 60%;
+    width: 55%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    border-style: outset;
+    align-items: center;
+    
+
+}
+.address{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.address_input{
+    width: 700px;
+   padding: 10px;
+   display: inline-block;
+   border: 1px solid #ccc;
+   box-sizing: border-box;
+   border-radius: 10px;
+   margin-left: 10px;
+   margin-top: 30px;
+}
+.hash_btn{
+    margin-top: 50px;
+    border-radius: 5px;
+    background-color: #04aa86;
+    color: white;
+    width: 25%;
+    padding: 10px;
+    margin: 25px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: medium;
+    cursor: pointer;
+}
