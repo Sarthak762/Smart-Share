@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import "./Received.css";
+import { useEffect, useState } from "react";
 import FileBox from "./FileBox";
-import "./FileDashboard.css";
 import SmartShare from "./SmartShare.json";
 import Web3 from "web3";
 
-function FileDashboard() {
-  const [files, setFiles] = useState([]);
+function Received() {
   const [receivedFiles, setReceivedFiles] = useState([]);
   const contractAddress = "0xCD99ff700ccF9aCBF3B2c16a9f7318b22F5DCe31";
 
@@ -20,11 +20,13 @@ function FileDashboard() {
           SmartShare.abi,
           contractAddress
         );
+
         await smartShare.methods
-          .retrieveUserFiles()
+          .retrieveReceivedFiles()
           .call({ from: accounts[0] })
           .then((result) => {
-            setFiles(result);
+            console.log("received files", result);
+            setReceivedFiles(result);
           });
       }
     };
@@ -33,9 +35,9 @@ function FileDashboard() {
 
   return (
     <div className="fileDashboard">
-      <h1>File DashBoard</h1>
+      <h1>Received Files</h1>
       <div className="fileContainer">
-        {files.map((file) => (
+        {receivedFiles.map((file) => (
           <FileBox id={file[0]} cid={file[1]} name={file[2]} />
         ))}
       </div>
@@ -43,4 +45,4 @@ function FileDashboard() {
   );
 }
 
-export default FileDashboard;
+export default Received;

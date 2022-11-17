@@ -1,0 +1,41 @@
+.share {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+}
+
+.container {
+  width: 60vw;
+  height: 80vh;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: aliceblue;
+  align-items: center;
+  border-radius: 20px;
+}
+
+..container > form {
+  margin-top: 35px;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.fileName {
+  height: 35px;
+  width: 75%;
+}
+
+.uploadButton {
+  height: 35px;
+  width: 25%;
+  background-color: rgb(51, 88, 114);
+  color: white;
+  border-radius: 5px;
+}

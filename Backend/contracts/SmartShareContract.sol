@@ -15,12 +15,17 @@ contract SmartShare{
     File[] public files;
     
     mapping(address => uint[]) public userData;
-
+    mapping(address => uint[]) public received;
+ 
     function uploadFiles(string memory _cidHash,string memory _name) public{
         imageCount++;
         File memory file = File(imageCount,_cidHash,_name,msg.sender);
         files.push(file);
         userData[msg.sender].push(imageCount);
+    }
+
+    function shareFile(address _receiver,uint _id) public{
+        received[_receiver].push(_id);
     }
 
     function retrieveUserFiles() public view returns(File[] memory){
@@ -29,6 +34,17 @@ contract SmartShare{
         File[] memory allFiles = new File[](len);
         for(uint i=0;i<len;i++){
             uint id = userData[userAddress][i];
+            allFiles[i] = files[id-1];
+        }
+        return allFiles;
+    }
+
+    function retrieveReceivedFiles() public view returns(File[] memory){
+        address userAddress = msg.sender;
+        uint len = received[userAddress].length;
+        File[] memory allFiles = new File[](len);
+        for(uint i=0;i<len;i++){
+            uint id = received[userAddress][i];
             allFiles[i] = files[id-1];
         }
         return allFiles;

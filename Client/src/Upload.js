@@ -12,7 +12,7 @@ function Upload() {
   const [account, setAccount] = useState(null);
   const [imageClass, setImageClass] = useState("selectedImageBlank");
   const client = create("/ip4/127.0.0.1/tcp/5001");
-  const contractAddress = "0x597Ff670A6bd190C8EC91c57bB288dA6Fd86f3B2";
+  const contractAddress = "0xCD99ff700ccF9aCBF3B2c16a9f7318b22F5DCe31";
   // const { id, cid } = useLocation().state;
   // console.log(id);
   // console.log(cid);

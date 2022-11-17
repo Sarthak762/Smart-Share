@@ -1,0 +1,20 @@
+.fileDashboard {
+  top: 8vh;
+  height: 100vh;
+  width: 94vw;
+  position: absolute;
+  left: 3vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.fileDashboard > h1 {
+  flex: 0.1;
+}
+
+.fileContainer {
+  flex: 0.9;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}

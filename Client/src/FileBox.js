@@ -9,7 +9,7 @@ function FileBox({ id, cid, name }) {
       <img src={`http://localhost:8080/ipfs/${cid}`} alt="" />
       <div className="fileOptions">
         <p>{name}</p>
-        <Link to="/upload" state={{ id: id, cid: cid }}>
+        <Link to="/share" state={{ id: id, cid: cid }}>
           <IconButton>
             <Send className="shareIcon" />
           </IconButton>
