@@ -17,7 +17,7 @@
   border-radius: 20px;
 }
 
-..container > form {
+.container > form {
   margin-top: 35px;
   height: 45%;
   display: flex;
@@ -30,6 +30,7 @@
 .fileName {
   height: 35px;
   width: 75%;
+  border-radius: 15px;
 }
 
 .uploadButton {

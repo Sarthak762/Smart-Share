@@ -3,6 +3,7 @@ import "./Upload.css";
 import { create } from "ipfs-http-client";
 import SmartShare from "./SmartShare.json";
 import Web3 from "web3";
+import { UploadFile } from "@mui/icons-material";
 // import { useLocation } from "react-router";
 
 function Upload() {
@@ -10,9 +11,11 @@ function Upload() {
   const [selectedImagefile, setSelectedImagefile] = useState(null);
   const [fileName, setFileName] = useState(null);
   const [account, setAccount] = useState(null);
+  const [fileUploadButton, setFileUploadButton] = useState(null);
   const [imageClass, setImageClass] = useState("selectedImageBlank");
   const client = create("/ip4/127.0.0.1/tcp/5001");
-  const contractAddress = "0xCD99ff700ccF9aCBF3B2c16a9f7318b22F5DCe31";
+  const contractAddress = "0x73475571b911310347601E9b7D99dB3Ecb20a0Fc";
+
   // const { id, cid } = useLocation().state;
   // console.log(id);
   // console.log(cid);
@@ -49,6 +52,10 @@ function Upload() {
         .then((result) => {
           console.log(result);
           console.log("file successfully uploaded");
+          {
+            alert("file successfully uploaded");
+          }
+          window.location.reload();
         });
     }
   };
@@ -61,15 +68,34 @@ function Upload() {
       uploadFileToEthereum(created.path);
     } catch (error) {
       console.log(error);
+      window.location.reload();
     }
   };
+
+  useEffect(() => {
+    if (selectedImagefile) setFileUploadButton(true);
+  }, [selectedImagefile]);
 
   return (
     <div className="upload">
       <div className="uploadBox">
+        <h2>Upload File</h2>
         <img src={selectedImageUrl} alt="" className={imageClass} />
         <form onSubmit={handleFileSubmit}>
-          <input type="file" className="file" onChange={retrieveFile} />
+          <label
+            for="file-upload"
+            class={!fileUploadButton ? "custom-file-upload" : "hide"}
+          >
+            <UploadFile />
+            Choose Document
+          </label>
+          <input
+            id="file-upload"
+            type="file"
+            className={!fileUploadButton ? "choosefile" : "hide"}
+            onChange={retrieveFile}
+          />
+
           <input
             type="text"
             placeholder="Enter file Name"

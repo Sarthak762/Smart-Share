@@ -7,7 +7,7 @@ import Web3 from "web3";
 
 function Received() {
   const [receivedFiles, setReceivedFiles] = useState([]);
-  const contractAddress = "0xCD99ff700ccF9aCBF3B2c16a9f7318b22F5DCe31";
+  const contractAddress = "0x73475571b911310347601E9b7D99dB3Ecb20a0Fc";
 
   useEffect(() => {
     const retrieveFiles = async () => {

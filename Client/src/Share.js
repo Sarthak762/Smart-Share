@@ -10,7 +10,7 @@ function Share() {
   const [fileId, setFileId] = useState(null);
   const [account, setAccount] = useState(null);
   const location = useLocation();
-  const contractAddress = "0xCD99ff700ccF9aCBF3B2c16a9f7318b22F5DCe31";
+  const contractAddress = "0x73475571b911310347601E9b7D99dB3Ecb20a0Fc";
 
   const uploadChangesToEthereum = async (fileId, receiverId) => {
     if (window.ethereum) {
@@ -26,6 +26,10 @@ function Share() {
         .then((result) => {
           console.log(result);
           console.log("file successfully uploaded");
+          {
+            alert("file successfully shared");
+          }
+          window.location.reload();
         });
     }
   };
@@ -45,6 +49,7 @@ function Share() {
     <div className="share">
       <div className="container">
         <form onSubmit={sendFile}>
+          <h2>Share file</h2>
           <input
             type="text"
             placeholder="Enter receiver public identification number"
@@ -52,7 +57,7 @@ function Share() {
             onChange={(e) => setId(e.target.value)}
           />
           <button type="submit" className="uploadButton">
-            Upload
+            SHARE
           </button>
         </form>
       </div>

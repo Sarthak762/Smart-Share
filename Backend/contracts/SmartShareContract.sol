@@ -12,10 +12,28 @@ contract SmartShare{
         address owner;
     }
 
+    struct keyPair{
+        string publicKey;
+        string privateKey;
+    }
+
     File[] public files;
     
     mapping(address => uint[]) public userData;
     mapping(address => uint[]) public received;
+    mapping(address => keyPair) public keyStore;
+
+    function checkUser() public view returns(keyPair memory){
+        address userAddress = msg.sender;
+        keyPair memory userkeys = keyStore[userAddress];
+        return userkeys;
+    }
+
+    function addUser(string memory publicKey,string memory privateKey) public{
+        address userAddress = msg.sender;
+        keyPair memory userKeys = keyPair(publicKey,privateKey);
+        keyStore[userAddress] = userKeys; 
+    }
  
     function uploadFiles(string memory _cidHash,string memory _name) public{
         imageCount++;
@@ -24,8 +42,8 @@ contract SmartShare{
         userData[msg.sender].push(imageCount);
     }
 
-    function shareFile(address _receiver,uint _id) public{
-        received[_receiver].push(_id);
+    function shareFile(address _receiver,uint encrypted_id) public{
+        received[_receiver].push(encrypted_id);
     }
 
     function retrieveUserFiles() public view returns(File[] memory){

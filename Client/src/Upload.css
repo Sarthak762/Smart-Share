@@ -41,14 +41,33 @@
   width: 60%;
 }
 
-.file {
+.custom-file-upload {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.custom-file-upload > .MuiSvgIcon-root {
+  height: 100px;
+  font-size: 100px;
+}
+
+.choosefile {
+  display: none;
+}
+
+#file-upload-button {
   height: 40px;
-  width: 75%;
 }
 
 .fileName {
   height: 35px;
   width: 75%;
+  margin: 10px;
 }
 
 .uploadButton {
